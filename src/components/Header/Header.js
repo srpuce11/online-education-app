@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = ({ onLogout }) => {
     return (
         <header>
-            <h1>My Application</h1>
+            <h1>Online Education Application</h1>
             <nav>
                 <ul>
                     <li><Link to="/login">Login</Link></li>
