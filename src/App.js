@@ -1,25 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import LeftMenu from './components/LeftMenu/LeftMenu';
+import Home from './components/Home/Home';
+import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
+import TeacherDashboard from './components/Teacher/Dashboard';
+import CreateGroup from './components/Teacher/CreateGroup';
+import PostLecture from './components/Teacher/PostLecture';
+import CreateQuiz from './components/Teacher/CreateQuiz';
+import ChatGroup from './components/Teacher/ChatGroup';
+import StudentDashboard from './components/Student/Dashboard';
+import CourseList from './components/Student/CourseList';
+import CourseDetails from './components/Student/CourseDetails';
+import Quiz from './components/Student/Quiz';
+import Wallet from './components/Student/Wallet';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [role, setRole] = useState(null);
+
+    useEffect(() => {
+        // Fetch user role from authentication service or state
+        // setRole('teacher'); // Example: setting role to 'teacher'
+     setRole(''); // Example: setting role to 'student'
+    }, []);
+
+    const handleLogout = () => {
+        // Handle logout logic
+        setRole(null);
+    };
+
+    return (
+        <Router>
+            <div className="app">
+                <Header onLogout={handleLogout} />
+                <div className="main-content">
+                    <LeftMenu role={role} />
+                    <div className="content">
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/login" element={<Login setRole={setRole}/>}  />
+                            <Route path="/register" element={<Register />} />
+                            {role === 'teacher' && (
+                                <>
+                                    <Route path="/dashboard" element={<TeacherDashboard />} />
+                                    <Route path="/create-group" element={<CreateGroup />} />
+                                    <Route path="/post-lecture" element={<PostLecture />} />
+                                    <Route path="/create-quiz" element={<CreateQuiz />} />
+                                    <Route path="/chat-group" element={<ChatGroup />} />
+                                </>
+                            )}
+                            {role === 'student' && (
+                                <>
+                                    <Route path="/dashboard" element={<StudentDashboard />} />
+                                    <Route path="/course-list" element={<CourseList />} />
+                                    <Route path="/course-details" element={<CourseDetails />} />
+                                    <Route path="/quiz" element={<Quiz />} />
+                                    <Route path="/wallet" element={<Wallet />} />
+                                </>
+                            )}
+                            <Route path="*" element={<Navigate to="/" />} /> {/* Redirect unknown routes to home */}
+                        </Routes>
+                    </div>
+                </div>
+                <Footer />
+            </div>
+        </Router>
+    );
+};
 
 export default App;
