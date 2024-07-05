@@ -21,13 +21,10 @@ const App = () => {
     const [role, setRole] = useState(null);
 
     useEffect(() => {
-        // Fetch user role from authentication service or state
-        // setRole('teacher'); // Example: setting role to 'teacher'
-     setRole(''); // Example: setting role to 'student'
+     setRole(''); 
     }, []);
 
     const handleLogout = () => {
-        // Handle logout logic
         setRole(null);
     };
 
@@ -60,7 +57,7 @@ const App = () => {
                                     <Route path="/wallet" element={<Wallet />} />
                                 </>
                             )}
-                            <Route path="*" element={<Navigate to="/" />} /> {/* Redirect unknown routes to home */}
+                            <Route path="*" element={<Navigate to="/" />} />
                         </Routes>
                     </div>
                 </div>

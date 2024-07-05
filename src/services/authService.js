@@ -1,6 +1,7 @@
 const authService = {
     login: async (email, password) => {
-        // Mock implementation. Replace with actual API call.
+
+        //api calls to auth/user api
         if (email === 'teacher@gmail.com' && password === '123') {
             console.log("Teached logged In");
             return 'teacher';
