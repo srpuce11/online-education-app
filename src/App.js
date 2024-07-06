@@ -21,11 +21,17 @@ const App = () => {
     const [role, setRole] = useState(null);
 
     useEffect(() => {
-     setRole(''); 
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        if (user) {
+            setRole(user.role.toLowerCase());
+        } else {
+            setRole(null);
+        }
     }, []);
 
     const handleLogout = () => {
-        setRole(null);
+        sessionStorage.removeItem("user");
+        setRole(null); 
     };
 
     return (

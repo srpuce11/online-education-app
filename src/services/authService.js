@@ -1,17 +1,22 @@
 const authService = {
     login: async (email, password) => {
+        try {
+            const response = await fetch(`http://192.168.29.245:8081/api/users/login?username=${email}&password=${password}`, {
+                method: 'GET',
+            });
 
-        //api calls to auth/user api
-        if (email === 'teacher@gmail.com' && password === '123') {
-            console.log("Teached logged In");
-            return 'teacher';
-        } else if (email === 'student@gmail.com' && password === '123') {
-            console.log("Student logged In");
-            return 'student';
+            if (!response.ok) {
+                console.log("Login Failed");
+                throw new Error('Invalid credentials');
+            }
 
-        } else {
-            console.error('Invalid credentials');
-            throw new Error('Invalid credentials');
+            const data = await response.json();
+            console.log("Login success");
+            sessionStorage.setItem('user', JSON.stringify(data));
+            return data.role.toLowerCase();
+        } catch (error) {
+            console.error('Error logging in:', error);
+            throw error;
         }
     },
 };
