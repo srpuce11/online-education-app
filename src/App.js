@@ -12,6 +12,7 @@ import PostLecture from './components/Teacher/PostLecture';
 import CreateQuiz from './components/Teacher/CreateQuiz';
 import ChatGroup from './components/Teacher/ChatGroup';
 import StudentDashboard from './components/Student/Dashboard';
+import CreateCourseForm from './components/Course/CreateCourseForm';
 import CourseList from './components/Student/CourseList';
 import CourseDetails from './components/Student/CourseDetails';
 import Quiz from './components/Student/Quiz';
@@ -49,6 +50,7 @@ const App = () => {
                                 <>
                                     <Route path="/dashboard" element={<TeacherDashboard />} />
                                     <Route path="/create-group" element={<CreateGroup />} />
+                                    <Route path="/create-course" element={<CreateCourseForm />} />
                                     <Route path="/post-lecture" element={<PostLecture />} />
                                     <Route path="/create-quiz" element={<CreateQuiz />} />
                                     <Route path="/chat-group" element={<ChatGroup />} />
