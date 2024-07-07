@@ -2,9 +2,7 @@ import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_BASE_URL_QUIZ;
 
-
-
-const quizService = {
+const questionService = {
   addQuestion: async (quizId, questionData) => {
     try {
       const response = await axios.post(`${API_URL}/quiz/${quizId}/question`, questionData, {
@@ -60,7 +58,29 @@ const quizService = {
       console.error('Error adding option:', error);
       throw error;
     }
+  },
+  addOption: async (quizId, questionId, optionData) => {
+    const response = await fetch(`${API_URL}/quiz/${quizId}/question/${questionId}/options`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(optionData)
+    });
+    return response.json();
+  },
+
+  updateOption: async (quizId, questionId, optionId, optionData) => {
+    const response = await fetch(`${API_URL}/quiz/${quizId}/question/${questionId}/options/${optionId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(optionData)
+    });
+    return response.json();
   }
 };
 
-export default quizService;
+
+export default questionService;

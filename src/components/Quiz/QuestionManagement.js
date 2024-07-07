@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import quizService from '../../services/quizService';
+import questionService from '../../services/questionService';
 
 function QuestionManagement() {
   const { quizId } = useParams();
@@ -8,40 +9,36 @@ function QuestionManagement() {
   const [newQuestionText, setNewQuestionText] = useState('');
   const [newOptionText, setNewOptionText] = useState('');
   const [selectedQuestionId, setSelectedQuestionId] = useState(null);
-  const [questionOptions, setQuestionOptions] = useState({});
+  const [selectedCorrectOption, setSelectedCorrectOption] = useState({});
 
   useEffect(() => {
-    const fetchQuestions = async () => {
+    const fetchQuestionsAndOptions = async () => {
       try {
         const fetchedQuestions = await quizService.getQuestionsByQuizId(quizId);
-        setQuestions(fetchedQuestions);
         const optionsPromises = fetchedQuestions.map(question =>
           quizService.getOptionsByQuestionId(quizId, question.id)
         );
         const fetchedOptions = await Promise.all(optionsPromises);
         
-        const optionsMap = fetchedOptions.reduce((acc, options, index) => {
-          const questionId = fetchedQuestions[index].id;
-          acc[questionId] = options;
-          return acc;
-        }, {});
+        const questionsWithOptions = fetchedQuestions.map((question, index) => ({
+          ...question,
+          options: fetchedOptions[index]
+        }));
 
-        setQuestionOptions(optionsMap);
+        setQuestions(questionsWithOptions);
       } catch (error) {
         console.error('Error fetching questions:', error);
       }
-};
+    };
 
-    fetchQuestions();
-  }, [quizId,newOptionText
-  ]);
+    fetchQuestionsAndOptions();
+  }, [quizId]);
 
   const handleAddQuestion = async () => {
     try {
       const questionData = { questionText: newQuestionText };
-      console.log(quizId, questionData);
       const createdQuestion = await quizService.addQuestion(quizId, questionData);
-      setQuestions([...questions, createdQuestion]);
+      setQuestions([...questions, { ...createdQuestion, options: [] }]);
       setNewQuestionText('');
     } catch (error) {
       console.error('Error adding question:', error);
@@ -60,16 +57,49 @@ function QuestionManagement() {
   const handleAddOption = async (questionId) => {
     try {
       const optionData = { optionText: newOptionText };
-      await quizService.addOption(quizId, questionId, optionData);
+      const createdOption = await quizService.addOption(quizId, questionId, optionData);
       setNewOptionText('');
       setSelectedQuestionId(null);
-      // Fetch updated questions
-      const updatedQuestions = await quizService.getQuestionsByQuizId(quizId);
-      setQuestions(updatedQuestions);
+
+      setQuestions(prevQuestions =>
+        prevQuestions.map(question =>
+          question.id === questionId
+            ? { ...question, options: [...question.options, createdOption] }
+            : question
+        )
+      );
     } catch (error) {
       console.error('Error adding option:', error);
     }
-  };  
+  };
+
+
+  const handleCorrectOptionChange = async (questionId, optionId) => {
+    try {
+      const updatedQuestions = questions.map(question => {
+        if (question.id === questionId) {
+          return {
+            ...question,
+            options: question.options.map(option => {
+              const isCorrect = option.id === optionId;
+              if (isCorrect) {
+                questionService.updateOption(quizId, questionId, option.id, { ...option, correct: true });
+              } else if (option.correct) {
+                questionService.updateOption(quizId, questionId, option.id, { ...option, correct: false });
+              }
+              return { ...option, correct: isCorrect };
+            })
+          };
+        }
+        return question;
+      });
+
+      setQuestions(updatedQuestions);
+      setSelectedCorrectOption(prev => ({ ...prev, [questionId]: optionId }));
+    } catch (error) {
+      console.error('Error updating correct option:', error);
+    }
+  };
 
   return (
     <div>
@@ -101,18 +131,20 @@ function QuestionManagement() {
           ) : (
             <button onClick={() => setSelectedQuestionId(question.id)}>Add Option</button>
           )}
-          {questionOptions[question.id] && (
-            <ul>
-              {questionOptions[question.id].map(option => (
-                <li key={option.id}>
-                  {option.optionText}
-                </li>
-              ))}
-            </ul>
-          )}
+          <ul>
+          {question.options.map(option => (
+            <li key={option.id} style={{ backgroundColor: option.correct ? 'green' : 'transparent' }}>
+              {option.optionText}
+              <input
+                type="checkbox"
+                checked={selectedCorrectOption[question.id] === option.id}
+                onChange={() => handleCorrectOptionChange(question.id, option.id)}
+              />
+            </li>
+          ))}
+          </ul>
         </li>
       ))}
-      
       </ul>
     </div>
   );
