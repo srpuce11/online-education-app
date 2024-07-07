@@ -33,7 +33,6 @@ const PostLecture = () => {
     const lectureData = { title };
     try {
       await lectureService.uploadLecture(selectedCourse, lectureData, file);
-      alert("Lecture uploaded successfully!");
       setSelectedCourse('');
       setTitle('');
       setFile(null);

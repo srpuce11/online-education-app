@@ -14,10 +14,11 @@ import ChatGroup from './components/Teacher/ChatGroup';
 import StudentDashboard from './components/Student/Dashboard';
 import CreateCourseForm from './components/Course/CreateCourseForm';
 import CourseList from './components/Student/CourseList';
-import CourseDetails from './components/Student/CourseDetails';
+import CourseDetails from './components/Teacher/CourseDetails';
 import Quiz from './components/Student/Quiz';
 import Wallet from './components/Student/Wallet';
 import QuestionManagement from './components/Quiz/QuestionManagement';
+import LearnCourse from './components/Student/LearnCourse';
 
 const App = () => {
     const [role, setRole] = useState(null);
@@ -64,7 +65,7 @@ const App = () => {
                                 <>
                                     <Route path="/dashboard" element={<StudentDashboard />} />
                                     <Route path="/course-list" element={<CourseList />} />
-                                    <Route path="/course-details" element={<CourseDetails />} />
+                                    <Route path="/course-learn" element={<LearnCourse />} />
                                     <Route path="/quiz" element={<Quiz />} />
                                     <Route path="/wallet" element={<Wallet />} />
                                 </>
@@ -73,7 +74,6 @@ const App = () => {
                         </Routes>
                     </div>
                 </div>
-                <Footer />
             </div>
         </Router>
     );

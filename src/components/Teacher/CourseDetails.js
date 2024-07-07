@@ -37,7 +37,6 @@ const CourseDetails = () => {
     if (window.confirm('Are you sure you want to delete this course?')) {
       try {
         await courseService.deleteCourse(courseId);
-        alert('Course deleted successfully!');
         navigate('/dashboard');
       } catch (error) {
         console.error('Error deleting course:', error);
@@ -50,7 +49,6 @@ const CourseDetails = () => {
       try {
         await lectureService.deleteLecture(courseId, lectureId);
         setLectures(prevLectures => prevLectures.filter(lecture => lecture.id !== lectureId));
-        alert('Lecture deleted successfully!');
       } catch (error) {
         console.error('Error deleting lecture:', error);
       }

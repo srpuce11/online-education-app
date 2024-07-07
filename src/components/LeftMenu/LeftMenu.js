@@ -17,8 +17,8 @@ const LeftMenu = ({ role }) => {
                     )}
                     {role === 'student' && (
                         <>
-                            <li><Link to="/course-list">Course List</Link></li>
-                            <li><Link to="/course-details">Course Details</Link></li>
+                            <li><Link to="/course-list">Buy New Course</Link></li>
+                            <li><Link to="/course-learn">Start Learning</Link></li>
                             <li><Link to="/quiz">Quiz</Link></li>
                             <li><Link to="/wallet">Wallet</Link></li>
                         </>

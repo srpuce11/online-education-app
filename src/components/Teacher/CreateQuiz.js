@@ -33,12 +33,10 @@ function CreateQuiz() {
       const createdQuiz = await quizService.createQuiz(quizData);
       setQuizzes([...quizzes, createdQuiz]);
 
-      alert('Quiz created successfully!');
       setQuizTitle('');
       setQuizPrice(0);
     } catch (error) {
       console.error('Error creating quiz:', error);
-      alert('Failed to create quiz. Please try again.');
     }
   };
 
@@ -47,10 +45,8 @@ function CreateQuiz() {
       try {
         await quizService.deleteQuiz(quizId);
         setQuizzes(quizzes.filter(quiz => quiz.id !== quizId));
-        alert('Quiz deleted successfully!');
       } catch (error) {
         console.error('Error deleting quiz:', error);
-        alert('Failed to delete quiz. Please try again.');
       }
     }
   };
