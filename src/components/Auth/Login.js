@@ -15,10 +15,10 @@ const Login = ({ setRole }) => {
         setRole(role);
       if (role === "teacher") {
         console.log("Navigating to teacher dashboard");
-        navigate("Teacher/dashboard"); 
+        navigate("/dashboard"); 
       } else if (role === "student") {
         console.log("Navigating to student dashboard");
-        navigate("Student/dashboard");
+        navigate("/dashboard");
       }
     } catch (error) {
       setError("Invalid email or password");

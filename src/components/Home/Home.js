@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <div>
             <h2>Welcome to My Application</h2>
-            <p>This is the home page. Please log in to access your dashboard.</p>
+            <p>This is the home page.</p>
         </div>
     );
 };

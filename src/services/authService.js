@@ -1,7 +1,12 @@
+
+
+const API_URL = process.env.REACT_APP_API_BASE_URL_AUTH.concat("/users");
+console.log("API URSL FOR AUTH IS " ,API_URL);
+
 const authService = {
     login: async (email, password) => {
         try {
-            const response = await fetch(`http://192.168.29.245:8081/api/users/login?username=${email}&password=${password}`, {
+            const response = await fetch(`${API_URL}/login?username=${email}&password=${password}`, {
                 method: 'GET',
             });
 

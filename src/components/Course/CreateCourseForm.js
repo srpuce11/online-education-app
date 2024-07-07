@@ -1,58 +1,51 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import courseService from '../../services/courseService';
 
 const CreateCourseForm = () => {
-  const { courseId } = useParams(); // If using React Router for course ID parameter
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
-  const teacherId = JSON.parse(sessionStorage.getItem('user')).id;
+  const teacherId = JSON.parse(sessionStorage.getItem('user')).id; 
+  const navigate = useNavigate();
+  const { courseId } = useParams(); // Get courseId from URL if present
 
   useEffect(() => {
-    // Fetch course details if editing existing course
     if (courseId) {
-      fetchCourseDetails(courseId);
+      const fetchCourseDetails = async () => {
+        try {
+          const course = await courseService.getCourseById(courseId);
+          setTitle(course.title);
+          setDescription(course.description);
+          setPrice(course.price);
+        } catch (error) {
+          console.error('Error fetching course details:', error);
+        }
+      };
+
+      fetchCourseDetails();
     }
   }, [courseId]);
 
-  const fetchCourseDetails = async (id) => {
-    try {
-      const course = await courseService.getCourseById(id);
-      setTitle(course.title);
-      setDescription(course.description);
-      setPrice(course.price);
-    } catch (error) {
-      console.error('Error fetching course details:', error);
-    }
-  };
+  const handleCancel = () => {
+
+
+    navigate(-1);
+
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const courseData = { title, description, teacherId, price };
-
     try {
       if (courseId) {
         await courseService.updateCourse(courseId, courseData);
-        alert('Course updated successfully!');
       } else {
         await courseService.createCourse(courseData);
-        alert('Course created successfully!');
       }
+      navigate("/create-group");
     } catch (error) {
       console.error('Error saving course:', error);
-    }
-  };
-
-  const handleDelete = async () => {
-    if (window.confirm('Are you sure you want to delete this course?')) {
-      try {
-        await courseService.deleteCourse(courseId);
-        alert('Course deleted successfully!');
-        // Optionally navigate to another page or update state
-      } catch (error) {
-        console.error('Error deleting course:', error);
-      }
     }
   };
 
@@ -71,7 +64,9 @@ const CreateCourseForm = () => {
         <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} required />
       </div>
       <button type="submit">{courseId ? 'Update Course' : 'Create Course'}</button>
-      {courseId && <button type="button" onClick={handleDelete}>Delete Course</button>}
+
+      <button onClick={handleCancel}>Cancel</button>
+
     </form>
   );
 };

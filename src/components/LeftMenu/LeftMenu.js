@@ -9,7 +9,7 @@ const LeftMenu = ({ role }) => {
                     <li><Link to="/dashboard">Dashboard</Link></li>
                     {role === 'teacher' && (
                         <>
-                            <li><Link to="/create-group">Create Group</Link></li>
+                            <li><Link to="/create-group">Courses</Link></li>
                             <li><Link to="/post-lecture">Post Lecture</Link></li>
                             <li><Link to="/create-quiz">Create Quiz</Link></li>
                             <li><Link to="/chat-group">Chat Group</Link></li>

@@ -17,6 +17,7 @@ import CourseList from './components/Student/CourseList';
 import CourseDetails from './components/Student/CourseDetails';
 import Quiz from './components/Student/Quiz';
 import Wallet from './components/Student/Wallet';
+import QuestionManagement from './components/Quiz/QuestionManagement';
 
 const App = () => {
     const [role, setRole] = useState(null);
@@ -50,9 +51,12 @@ const App = () => {
                                 <>
                                     <Route path="/dashboard" element={<TeacherDashboard />} />
                                     <Route path="/create-group" element={<CreateGroup />} />
-                                    <Route path="/create-course" element={<CreateCourseForm />} />
+                                    <Route path="/create-course" element={<CreateCourseForm />} />  
+                                    <Route path="/course-details/:courseId" element={<CourseDetails />} />                                  <Route path="/create-course/:courseId" element={<CreateCourseForm />} />
                                     <Route path="/post-lecture" element={<PostLecture />} />
                                     <Route path="/create-quiz" element={<CreateQuiz />} />
+                                    <Route path="/manage-quiz/:quizId" element={<QuestionManagement />} />
+
                                     <Route path="/chat-group" element={<ChatGroup />} />
                                 </>
                             )}

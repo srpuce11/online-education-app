@@ -1,506 +1,443 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/home/sunil/.nvm/versions/node/v6.9.5/bin/node',
 1 verbose cli   '/home/sunil/.nvm/versions/node/v6.9.5/bin/npm',
-1 verbose cli   'i',
-1 verbose cli   'react-router-dom' ]
+1 verbose cli   'install',
+1 verbose cli   'dotenv' ]
 2 info using npm@3.10.10
 3 info using node@v6.9.5
 4 silly loadCurrentTree Starting
 5 silly install loadCurrentTree
 6 silly install readLocalPackageData
-7 silly fetchPackageMetaData react-router-dom
-8 silly fetchNamedPackageData react-router-dom
-9 silly mapToRegistry name react-router-dom
+7 silly fetchPackageMetaData dotenv@^16.4.5
+8 silly fetchNamedPackageData dotenv
+9 silly mapToRegistry name dotenv
 10 silly mapToRegistry using default registry
 11 silly mapToRegistry registry https://registry.npmjs.org/
 12 silly mapToRegistry data Result {
-12 silly mapToRegistry   raw: 'react-router-dom',
+12 silly mapToRegistry   raw: 'dotenv',
 12 silly mapToRegistry   scope: null,
-12 silly mapToRegistry   escapedName: 'react-router-dom',
-12 silly mapToRegistry   name: 'react-router-dom',
+12 silly mapToRegistry   escapedName: 'dotenv',
+12 silly mapToRegistry   name: 'dotenv',
 12 silly mapToRegistry   rawSpec: '',
 12 silly mapToRegistry   spec: 'latest',
 12 silly mapToRegistry   type: 'tag' }
-13 silly mapToRegistry uri https://registry.npmjs.org/react-router-dom
-14 verbose request uri https://registry.npmjs.org/react-router-dom
+13 silly mapToRegistry uri https://registry.npmjs.org/dotenv
+14 verbose request uri https://registry.npmjs.org/dotenv
 15 verbose request no auth needed
-16 info attempt registry request try #1 at 11:52:47 AM
-17 verbose request id cce6bfe9a646ce7b
-18 verbose etag W/"24f291e05c9f0c47c2a9553110922ed7"
-19 verbose lastModified Sat, 29 Jun 2024 07:06:50 GMT
-20 http request GET https://registry.npmjs.org/react-router-dom
-21 http 200 https://registry.npmjs.org/react-router-dom
-22 verbose headers { date: 'Wed, 03 Jul 2024 06:22:48 GMT',
-22 verbose headers   'content-type': 'application/json',
-22 verbose headers   'transfer-encoding': 'chunked',
+16 info attempt registry request try #1 at 7:19:17 PM
+17 verbose request id 7e1f53b3bb9f02b3
+18 verbose etag W/"609a1f7b117267d9a2ac68a0e4f84db4"
+19 verbose lastModified Thu, 30 May 2024 05:44:31 GMT
+20 http request GET https://registry.npmjs.org/dotenv
+21 http 304 https://registry.npmjs.org/dotenv
+22 verbose headers { date: 'Sun, 07 Jul 2024 13:49:18 GMT',
 22 verbose headers   connection: 'keep-alive',
-22 verbose headers   'cf-ray': '89d4c87fccce54f2-DEL',
+22 verbose headers   'cf-ray': '89f84c0bea93551d-DEL',
 22 verbose headers   'cf-cache-status': 'HIT',
 22 verbose headers   'access-control-allow-origin': '*',
-22 verbose headers   age: '140',
+22 verbose headers   age: '95',
 22 verbose headers   'cache-control': 'public, max-age=300',
-22 verbose headers   etag: 'W/"6201fb50f4dc7eb99243cf5f88df57ac"',
-22 verbose headers   'last-modified': 'Tue, 02 Jul 2024 19:31:32 GMT',
-22 verbose headers   vary: 'accept-encoding, accept',
-22 verbose headers   server: 'cloudflare',
-22 verbose headers   'content-encoding': 'gzip' }
-23 silly get cb [ 200,
-23 silly get   { date: 'Wed, 03 Jul 2024 06:22:48 GMT',
-23 silly get     'content-type': 'application/json',
-23 silly get     'transfer-encoding': 'chunked',
+22 verbose headers   etag: '"609a1f7b117267d9a2ac68a0e4f84db4"',
+22 verbose headers   'last-modified': 'Thu, 30 May 2024 05:44:31 GMT',
+22 verbose headers   vary: 'Accept-Encoding',
+22 verbose headers   server: 'cloudflare' }
+23 silly get cb [ 304,
+23 silly get   { date: 'Sun, 07 Jul 2024 13:49:18 GMT',
 23 silly get     connection: 'keep-alive',
-23 silly get     'cf-ray': '89d4c87fccce54f2-DEL',
+23 silly get     'cf-ray': '89f84c0bea93551d-DEL',
 23 silly get     'cf-cache-status': 'HIT',
 23 silly get     'access-control-allow-origin': '*',
-23 silly get     age: '140',
+23 silly get     age: '95',
 23 silly get     'cache-control': 'public, max-age=300',
-23 silly get     etag: 'W/"6201fb50f4dc7eb99243cf5f88df57ac"',
-23 silly get     'last-modified': 'Tue, 02 Jul 2024 19:31:32 GMT',
-23 silly get     vary: 'accept-encoding, accept',
-23 silly get     server: 'cloudflare',
-23 silly get     'content-encoding': 'gzip' } ]
-24 verbose get saving react-router-dom to /home/sunil/.npm/registry.npmjs.org/react-router-dom/.cache.json
-25 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
-26 silly install normalizeTree
-27 silly loadCurrentTree Finishing
-28 silly loadIdealTree Starting
-29 silly install loadIdealTree
-30 silly cloneCurrentTree Starting
-31 silly install cloneCurrentTreeToIdealTree
-32 silly cloneCurrentTree Finishing
-33 silly loadShrinkwrap Starting
-34 silly install loadShrinkwrap
-35 silly loadShrinkwrap Finishing
-36 silly loadAllDepsIntoIdealTree Starting
-37 silly install loadAllDepsIntoIdealTree
-38 silly resolveWithNewModule react-router-dom@6.24.0 checking installable status
-39 silly cache add args [ 'react-router-dom', null ]
-40 verbose cache add spec react-router-dom
-41 silly cache add parsed spec Result {
-41 silly cache add   raw: 'react-router-dom',
-41 silly cache add   scope: null,
-41 silly cache add   escapedName: 'react-router-dom',
-41 silly cache add   name: 'react-router-dom',
-41 silly cache add   rawSpec: '',
-41 silly cache add   spec: 'latest',
-41 silly cache add   type: 'tag' }
-42 silly addNamed react-router-dom@latest
-43 verbose addNamed "latest" is being treated as a dist-tag for react-router-dom
-44 info addNameTag [ 'react-router-dom', 'latest' ]
-45 silly mapToRegistry name react-router-dom
-46 silly mapToRegistry using default registry
-47 silly mapToRegistry registry https://registry.npmjs.org/
-48 silly mapToRegistry data Result {
-48 silly mapToRegistry   raw: 'react-router-dom',
-48 silly mapToRegistry   scope: null,
-48 silly mapToRegistry   escapedName: 'react-router-dom',
-48 silly mapToRegistry   name: 'react-router-dom',
-48 silly mapToRegistry   rawSpec: '',
-48 silly mapToRegistry   spec: 'latest',
-48 silly mapToRegistry   type: 'tag' }
-49 silly mapToRegistry uri https://registry.npmjs.org/react-router-dom
-50 verbose addNameTag registry:https://registry.npmjs.org/react-router-dom not in flight; fetching
-51 verbose get https://registry.npmjs.org/react-router-dom not expired, no request
-52 silly addNameTag next cb for react-router-dom with tag latest
-53 silly addNamed react-router-dom@6.24.0
-54 verbose addNamed "6.24.0" is a plain semver version for react-router-dom
-55 silly cache afterAdd react-router-dom@6.24.0
-56 verbose afterAdd /home/sunil/.npm/react-router-dom/6.24.0/package/package.json not in flight; writing
-57 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
-58 verbose afterAdd /home/sunil/.npm/react-router-dom/6.24.0/package/package.json written
-59 silly fetchNamedPackageData react-router
-60 silly mapToRegistry name react-router
-61 silly mapToRegistry using default registry
-62 silly mapToRegistry registry https://registry.npmjs.org/
-63 silly mapToRegistry data Result {
-63 silly mapToRegistry   raw: 'react-router',
-63 silly mapToRegistry   scope: null,
-63 silly mapToRegistry   escapedName: 'react-router',
-63 silly mapToRegistry   name: 'react-router',
-63 silly mapToRegistry   rawSpec: '',
-63 silly mapToRegistry   spec: 'latest',
-63 silly mapToRegistry   type: 'tag' }
-64 silly mapToRegistry uri https://registry.npmjs.org/react-router
-65 silly fetchNamedPackageData @remix-run/router
-66 silly mapToRegistry name @remix-run/router
-67 silly mapToRegistry scope (from package name) @remix-run
-68 verbose mapToRegistry no registry URL found in name for scope @remix-run
-69 silly mapToRegistry using default registry
-70 silly mapToRegistry registry https://registry.npmjs.org/
-71 silly mapToRegistry data Result {
-71 silly mapToRegistry   raw: '@remix-run/router',
-71 silly mapToRegistry   scope: '@remix-run',
-71 silly mapToRegistry   escapedName: '@remix-run%2frouter',
-71 silly mapToRegistry   name: '@remix-run/router',
-71 silly mapToRegistry   rawSpec: '',
-71 silly mapToRegistry   spec: 'latest',
-71 silly mapToRegistry   type: 'tag' }
-72 silly mapToRegistry uri https://registry.npmjs.org/@remix-run%2frouter
-73 verbose request uri https://registry.npmjs.org/react-router
-74 verbose request no auth needed
-75 info attempt registry request try #1 at 11:52:49 AM
-76 verbose etag W/"f8d2f4756c04c6c7474677b98a8374a3"
-77 verbose lastModified Sat, 29 Jun 2024 07:06:47 GMT
-78 http request GET https://registry.npmjs.org/react-router
-79 verbose request uri https://registry.npmjs.org/@remix-run%2frouter
-80 verbose request no auth needed
-81 info attempt registry request try #1 at 11:52:49 AM
-82 verbose etag W/"a1efbc3d65ea95ca4e9ceacc72b98d99"
-83 verbose lastModified Thu, 27 Jun 2024 18:30:31 GMT
-84 http request GET https://registry.npmjs.org/@remix-run%2frouter
-85 http 200 https://registry.npmjs.org/react-router
-86 verbose headers { date: 'Wed, 03 Jul 2024 06:22:49 GMT',
-86 verbose headers   'content-type': 'application/json',
-86 verbose headers   'transfer-encoding': 'chunked',
-86 verbose headers   connection: 'keep-alive',
-86 verbose headers   'cf-ray': '89d4c888292854f2-DEL',
-86 verbose headers   'cf-cache-status': 'HIT',
-86 verbose headers   'access-control-allow-origin': '*',
-86 verbose headers   age: '53',
-86 verbose headers   'cache-control': 'public, max-age=300',
-86 verbose headers   etag: 'W/"8169297166fda02255de156bc34e4d73"',
-86 verbose headers   'last-modified': 'Tue, 02 Jul 2024 19:31:29 GMT',
-86 verbose headers   vary: 'accept-encoding, accept',
-86 verbose headers   server: 'cloudflare',
-86 verbose headers   'content-encoding': 'gzip' }
-87 silly get cb [ 200,
-87 silly get   { date: 'Wed, 03 Jul 2024 06:22:49 GMT',
-87 silly get     'content-type': 'application/json',
-87 silly get     'transfer-encoding': 'chunked',
-87 silly get     connection: 'keep-alive',
-87 silly get     'cf-ray': '89d4c888292854f2-DEL',
-87 silly get     'cf-cache-status': 'HIT',
-87 silly get     'access-control-allow-origin': '*',
-87 silly get     age: '53',
-87 silly get     'cache-control': 'public, max-age=300',
-87 silly get     etag: 'W/"8169297166fda02255de156bc34e4d73"',
-87 silly get     'last-modified': 'Tue, 02 Jul 2024 19:31:29 GMT',
-87 silly get     vary: 'accept-encoding, accept',
-87 silly get     server: 'cloudflare',
-87 silly get     'content-encoding': 'gzip' } ]
-88 verbose get saving react-router to /home/sunil/.npm/registry.npmjs.org/react-router/.cache.json
-89 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
-90 silly resolveWithNewModule react-router@6.24.0 checking installable status
-91 silly cache add args [ 'react-router@6.24.0', null ]
-92 verbose cache add spec react-router@6.24.0
-93 silly cache add parsed spec Result {
-93 silly cache add   raw: 'react-router@6.24.0',
-93 silly cache add   scope: null,
-93 silly cache add   escapedName: 'react-router',
-93 silly cache add   name: 'react-router',
-93 silly cache add   rawSpec: '6.24.0',
-93 silly cache add   spec: '6.24.0',
-93 silly cache add   type: 'version' }
-94 silly addNamed react-router@6.24.0
-95 verbose addNamed "6.24.0" is a plain semver version for react-router
-96 silly mapToRegistry name react-router
-97 silly mapToRegistry using default registry
-98 silly mapToRegistry registry https://registry.npmjs.org/
-99 silly mapToRegistry data Result {
-99 silly mapToRegistry   raw: 'react-router',
-99 silly mapToRegistry   scope: null,
-99 silly mapToRegistry   escapedName: 'react-router',
-99 silly mapToRegistry   name: 'react-router',
-99 silly mapToRegistry   rawSpec: '',
-99 silly mapToRegistry   spec: 'latest',
-99 silly mapToRegistry   type: 'tag' }
-100 silly mapToRegistry uri https://registry.npmjs.org/react-router
-101 verbose addNameVersion registry:https://registry.npmjs.org/react-router not in flight; fetching
-102 verbose get https://registry.npmjs.org/react-router not expired, no request
-103 silly cache afterAdd react-router@6.24.0
-104 verbose afterAdd /home/sunil/.npm/react-router/6.24.0/package/package.json not in flight; writing
+23 silly get     etag: '"609a1f7b117267d9a2ac68a0e4f84db4"',
+23 silly get     'last-modified': 'Thu, 30 May 2024 05:44:31 GMT',
+23 silly get     vary: 'Accept-Encoding',
+23 silly get     server: 'cloudflare' } ]
+24 verbose etag https://registry.npmjs.org/dotenv from cache
+25 verbose get saving dotenv to /home/sunil/.npm/registry.npmjs.org/dotenv/.cache.json
+26 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
+27 silly install normalizeTree
+28 silly loadCurrentTree Finishing
+29 silly loadIdealTree Starting
+30 silly install loadIdealTree
+31 silly cloneCurrentTree Starting
+32 silly install cloneCurrentTreeToIdealTree
+33 silly cloneCurrentTree Finishing
+34 silly loadShrinkwrap Starting
+35 silly install loadShrinkwrap
+36 silly loadShrinkwrap Finishing
+37 silly loadAllDepsIntoIdealTree Starting
+38 silly install loadAllDepsIntoIdealTree
+39 silly resolveWithNewModule dotenv@16.4.5 checking installable status
+40 silly cache add args [ 'dotenv@^16.4.5', null ]
+41 verbose cache add spec dotenv@^16.4.5
+42 silly cache add parsed spec Result {
+42 silly cache add   raw: 'dotenv@^16.4.5',
+42 silly cache add   scope: null,
+42 silly cache add   escapedName: 'dotenv',
+42 silly cache add   name: 'dotenv',
+42 silly cache add   rawSpec: '^16.4.5',
+42 silly cache add   spec: '>=16.4.5 <17.0.0',
+42 silly cache add   type: 'range' }
+43 silly addNamed dotenv@>=16.4.5 <17.0.0
+44 verbose addNamed ">=16.4.5 <17.0.0" is a valid semver range for dotenv
+45 silly addNameRange { name: 'dotenv', range: '>=16.4.5 <17.0.0', hasData: false }
+46 silly mapToRegistry name dotenv
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry data Result {
+49 silly mapToRegistry   raw: 'dotenv',
+49 silly mapToRegistry   scope: null,
+49 silly mapToRegistry   escapedName: 'dotenv',
+49 silly mapToRegistry   name: 'dotenv',
+49 silly mapToRegistry   rawSpec: '',
+49 silly mapToRegistry   spec: 'latest',
+49 silly mapToRegistry   type: 'tag' }
+50 silly mapToRegistry uri https://registry.npmjs.org/dotenv
+51 verbose addNameRange registry:https://registry.npmjs.org/dotenv not in flight; fetching
+52 verbose get https://registry.npmjs.org/dotenv not expired, no request
+53 silly addNameRange number 2 { name: 'dotenv', range: '>=16.4.5 <17.0.0', hasData: true }
+54 silly addNameRange versions [ 'dotenv',
+54 silly addNameRange   [ '0.0.1',
+54 silly addNameRange     '0.0.2',
+54 silly addNameRange     '0.0.3',
+54 silly addNameRange     '0.0.4',
+54 silly addNameRange     '0.0.5',
+54 silly addNameRange     '0.1.0',
+54 silly addNameRange     '0.1.1',
+54 silly addNameRange     '0.1.2',
+54 silly addNameRange     '0.2.0',
+54 silly addNameRange     '0.2.1',
+54 silly addNameRange     '0.2.2',
+54 silly addNameRange     '0.2.3',
+54 silly addNameRange     '0.2.4',
+54 silly addNameRange     '0.2.5',
+54 silly addNameRange     '0.2.6',
+54 silly addNameRange     '0.2.7',
+54 silly addNameRange     '0.2.8',
+54 silly addNameRange     '0.3.0',
+54 silly addNameRange     '0.4.0',
+54 silly addNameRange     '0.5.0',
+54 silly addNameRange     '0.5.1',
+54 silly addNameRange     '1.0.0',
+54 silly addNameRange     '1.1.0',
+54 silly addNameRange     '1.2.0',
+54 silly addNameRange     '2.0.0',
+54 silly addNameRange     '3.0.0',
+54 silly addNameRange     '4.0.0',
+54 silly addNameRange     '5.0.0',
+54 silly addNameRange     '5.0.1',
+54 silly addNameRange     '6.0.0',
+54 silly addNameRange     '6.1.0',
+54 silly addNameRange     '6.2.0-rc1',
+54 silly addNameRange     '6.2.0-0',
+54 silly addNameRange     '6.2.0',
+54 silly addNameRange     '7.0.0',
+54 silly addNameRange     '8.0.0',
+54 silly addNameRange     '8.1.0',
+54 silly addNameRange     '8.2.0',
+54 silly addNameRange     '8.3.0',
+54 silly addNameRange     '8.4.0',
+54 silly addNameRange     '8.5.0',
+54 silly addNameRange     '8.5.1',
+54 silly addNameRange     '8.6.0',
+54 silly addNameRange     '9.0.0',
+54 silly addNameRange     '9.0.1',
+54 silly addNameRange     '9.0.2',
+54 silly addNameRange     '10.0.0',
+54 silly addNameRange     '11.0.0',
+54 silly addNameRange     '12.0.0',
+54 silly addNameRange     '12.0.1',
+54 silly addNameRange     '12.0.2',
+54 silly addNameRange     '12.0.3',
+54 silly addNameRange     '12.0.4',
+54 silly addNameRange     '13.0.0',
+54 silly addNameRange     '13.0.1',
+54 silly addNameRange     '14.0.0',
+54 silly addNameRange     '14.0.1',
+54 silly addNameRange     '14.1.0',
+54 silly addNameRange     '14.1.1',
+54 silly addNameRange     '14.2.0',
+54 silly addNameRange     '14.3.0',
+54 silly addNameRange     '14.3.1',
+54 silly addNameRange     '14.3.2',
+54 silly addNameRange     '15.0.0',
+54 silly addNameRange     '15.0.1',
+54 silly addNameRange     '16.0.0',
+54 silly addNameRange     '16.0.1',
+54 silly addNameRange     '16.0.2',
+54 silly addNameRange     '16.0.3',
+54 silly addNameRange     '16.1.0-rc1',
+54 silly addNameRange     '16.1.0-rc2',
+54 silly addNameRange     '16.1.0',
+54 silly addNameRange     '16.1.1',
+54 silly addNameRange     '16.1.2',
+54 silly addNameRange     '16.1.3',
+54 silly addNameRange     '16.1.4',
+54 silly addNameRange     '16.2.0',
+54 silly addNameRange     '16.3.0',
+54 silly addNameRange     '16.3.1',
+54 silly addNameRange     '16.3.2',
+54 silly addNameRange     '16.4.0',
+54 silly addNameRange     '16.4.1',
+54 silly addNameRange     '16.4.2',
+54 silly addNameRange     '16.4.3',
+54 silly addNameRange     '16.4.4',
+54 silly addNameRange     '16.4.5' ] ]
+55 silly addNamed dotenv@16.4.5
+56 verbose addNamed "16.4.5" is a plain semver version for dotenv
+57 silly mapToRegistry name dotenv
+58 silly mapToRegistry using default registry
+59 silly mapToRegistry registry https://registry.npmjs.org/
+60 silly mapToRegistry data Result {
+60 silly mapToRegistry   raw: 'dotenv',
+60 silly mapToRegistry   scope: null,
+60 silly mapToRegistry   escapedName: 'dotenv',
+60 silly mapToRegistry   name: 'dotenv',
+60 silly mapToRegistry   rawSpec: '',
+60 silly mapToRegistry   spec: 'latest',
+60 silly mapToRegistry   type: 'tag' }
+61 silly mapToRegistry uri https://registry.npmjs.org/dotenv
+62 verbose addRemoteTarball https://registry.npmjs.org/dotenv/-/dotenv-16.4.5.tgz not in flight; adding
+63 verbose addRemoteTarball [ 'https://registry.npmjs.org/dotenv/-/dotenv-16.4.5.tgz',
+63 verbose addRemoteTarball   'cdd3b3b604cb327e286b4762e13502f717cb099f' ]
+64 info retry fetch attempt 1 at 7:19:19 PM
+65 info attempt registry request try #1 at 7:19:19 PM
+66 http fetch GET https://registry.npmjs.org/dotenv/-/dotenv-16.4.5.tgz
+67 http fetch 200 https://registry.npmjs.org/dotenv/-/dotenv-16.4.5.tgz
+68 silly fetchAndShaCheck shasum cdd3b3b604cb327e286b4762e13502f717cb099f
+69 verbose addTmpTarball /tmp/npm-12302-444111f8/registry.npmjs.org/dotenv/-/dotenv-16.4.5.tgz not in flight; adding
+70 verbose addTmpTarball already have metadata; skipping unpack for dotenv@16.4.5
+71 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
+72 silly cache afterAdd dotenv@16.4.5
+73 verbose afterAdd /home/sunil/.npm/dotenv/16.4.5/package/package.json not in flight; writing
+74 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
+75 verbose afterAdd /home/sunil/.npm/dotenv/16.4.5/package/package.json written
+76 silly fetchNamedPackageData strip-ansi
+77 silly mapToRegistry name strip-ansi
+78 silly mapToRegistry using default registry
+79 silly mapToRegistry registry https://registry.npmjs.org/
+80 silly mapToRegistry data Result {
+80 silly mapToRegistry   raw: 'strip-ansi',
+80 silly mapToRegistry   scope: null,
+80 silly mapToRegistry   escapedName: 'strip-ansi',
+80 silly mapToRegistry   name: 'strip-ansi',
+80 silly mapToRegistry   rawSpec: '',
+80 silly mapToRegistry   spec: 'latest',
+80 silly mapToRegistry   type: 'tag' }
+81 silly mapToRegistry uri https://registry.npmjs.org/strip-ansi
+82 silly fetchNamedPackageData wrap-ansi
+83 silly mapToRegistry name wrap-ansi
+84 silly mapToRegistry using default registry
+85 silly mapToRegistry registry https://registry.npmjs.org/
+86 silly mapToRegistry data Result {
+86 silly mapToRegistry   raw: 'wrap-ansi',
+86 silly mapToRegistry   scope: null,
+86 silly mapToRegistry   escapedName: 'wrap-ansi',
+86 silly mapToRegistry   name: 'wrap-ansi',
+86 silly mapToRegistry   rawSpec: '',
+86 silly mapToRegistry   spec: 'latest',
+86 silly mapToRegistry   type: 'tag' }
+87 silly mapToRegistry uri https://registry.npmjs.org/wrap-ansi
+88 verbose request uri https://registry.npmjs.org/strip-ansi
+89 verbose request no auth needed
+90 info attempt registry request try #1 at 7:19:20 PM
+91 verbose etag W/"ac0377b2d4e7fbe4eea84e483222d0a5"
+92 verbose lastModified Sun, 28 May 2023 09:55:05 GMT
+93 http request GET https://registry.npmjs.org/strip-ansi
+94 verbose request uri https://registry.npmjs.org/wrap-ansi
+95 verbose request no auth needed
+96 info attempt registry request try #1 at 7:19:20 PM
+97 verbose etag W/"096b0befe71ac4a3b08a6a2255515b73"
+98 verbose lastModified Sat, 28 Oct 2023 17:40:35 GMT
+99 http request GET https://registry.npmjs.org/wrap-ansi
+100 http 304 https://registry.npmjs.org/strip-ansi
+101 verbose headers { date: 'Sun, 07 Jul 2024 13:49:20 GMT',
+101 verbose headers   connection: 'keep-alive',
+101 verbose headers   'cf-ray': '89f84c1b4afb551d-DEL',
+101 verbose headers   'cf-cache-status': 'HIT',
+101 verbose headers   'access-control-allow-origin': '*',
+101 verbose headers   age: '91',
+101 verbose headers   'cache-control': 'public, max-age=300',
+101 verbose headers   etag: '"ac0377b2d4e7fbe4eea84e483222d0a5"',
+101 verbose headers   'last-modified': 'Sun, 28 May 2023 09:55:05 GMT',
+101 verbose headers   vary: 'Accept-Encoding',
+101 verbose headers   server: 'cloudflare' }
+102 silly get cb [ 304,
+102 silly get   { date: 'Sun, 07 Jul 2024 13:49:20 GMT',
+102 silly get     connection: 'keep-alive',
+102 silly get     'cf-ray': '89f84c1b4afb551d-DEL',
+102 silly get     'cf-cache-status': 'HIT',
+102 silly get     'access-control-allow-origin': '*',
+102 silly get     age: '91',
+102 silly get     'cache-control': 'public, max-age=300',
+102 silly get     etag: '"ac0377b2d4e7fbe4eea84e483222d0a5"',
+102 silly get     'last-modified': 'Sun, 28 May 2023 09:55:05 GMT',
+102 silly get     vary: 'Accept-Encoding',
+102 silly get     server: 'cloudflare' } ]
+103 verbose etag https://registry.npmjs.org/strip-ansi from cache
+104 verbose get saving strip-ansi to /home/sunil/.npm/registry.npmjs.org/strip-ansi/.cache.json
 105 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
-106 verbose afterAdd /home/sunil/.npm/react-router/6.24.0/package/package.json written
-107 http 200 https://registry.npmjs.org/@remix-run%2frouter
-108 verbose headers { date: 'Wed, 03 Jul 2024 06:22:49 GMT',
-108 verbose headers   'content-type': 'application/json',
-108 verbose headers   'transfer-encoding': 'chunked',
-108 verbose headers   connection: 'keep-alive',
-108 verbose headers   'cf-ray': '89d4c8886b1a59e4-DEL',
-108 verbose headers   'cf-cache-status': 'HIT',
-108 verbose headers   'access-control-allow-origin': '*',
-108 verbose headers   age: '47',
-108 verbose headers   'cache-control': 'public, max-age=300',
-108 verbose headers   etag: 'W/"eecd7103fde001d8be3ac688c63a6411"',
-108 verbose headers   'last-modified': 'Mon, 01 Jul 2024 18:44:59 GMT',
-108 verbose headers   vary: 'accept-encoding, accept',
-108 verbose headers   server: 'cloudflare',
-108 verbose headers   'content-encoding': 'gzip' }
-109 silly get cb [ 200,
-109 silly get   { date: 'Wed, 03 Jul 2024 06:22:49 GMT',
-109 silly get     'content-type': 'application/json',
-109 silly get     'transfer-encoding': 'chunked',
-109 silly get     connection: 'keep-alive',
-109 silly get     'cf-ray': '89d4c8886b1a59e4-DEL',
-109 silly get     'cf-cache-status': 'HIT',
-109 silly get     'access-control-allow-origin': '*',
-109 silly get     age: '47',
-109 silly get     'cache-control': 'public, max-age=300',
-109 silly get     etag: 'W/"eecd7103fde001d8be3ac688c63a6411"',
-109 silly get     'last-modified': 'Mon, 01 Jul 2024 18:44:59 GMT',
-109 silly get     vary: 'accept-encoding, accept',
-109 silly get     server: 'cloudflare',
-109 silly get     'content-encoding': 'gzip' } ]
-110 verbose get saving @remix-run/router to /home/sunil/.npm/registry.npmjs.org/_40remix-run_252frouter/.cache.json
-111 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
-112 silly resolveWithNewModule @remix-run/router@1.17.0 checking installable status
-113 silly cache add args [ '@remix-run/router@1.17.0', null ]
-114 verbose cache add spec @remix-run/router@1.17.0
-115 silly cache add parsed spec Result {
-115 silly cache add   raw: '@remix-run/router@1.17.0',
-115 silly cache add   scope: '@remix-run',
-115 silly cache add   escapedName: '@remix-run%2frouter',
-115 silly cache add   name: '@remix-run/router',
-115 silly cache add   rawSpec: '1.17.0',
-115 silly cache add   spec: '1.17.0',
-115 silly cache add   type: 'version' }
-116 silly addNamed @remix-run/router@1.17.0
-117 verbose addNamed "1.17.0" is a plain semver version for @remix-run/router
-118 silly mapToRegistry name @remix-run/router
-119 silly mapToRegistry scope (from package name) @remix-run
-120 verbose mapToRegistry no registry URL found in name for scope @remix-run
-121 silly mapToRegistry using default registry
-122 silly mapToRegistry registry https://registry.npmjs.org/
-123 silly mapToRegistry data Result {
-123 silly mapToRegistry   raw: '@remix-run/router',
-123 silly mapToRegistry   scope: '@remix-run',
-123 silly mapToRegistry   escapedName: '@remix-run%2frouter',
-123 silly mapToRegistry   name: '@remix-run/router',
-123 silly mapToRegistry   rawSpec: '',
-123 silly mapToRegistry   spec: 'latest',
-123 silly mapToRegistry   type: 'tag' }
-124 silly mapToRegistry uri https://registry.npmjs.org/@remix-run%2frouter
-125 verbose addNameVersion registry:https://registry.npmjs.org/@remix-run%2frouter not in flight; fetching
-126 verbose get https://registry.npmjs.org/@remix-run%2frouter not expired, no request
-127 silly cache afterAdd @remix-run/router@1.17.0
-128 verbose afterAdd /home/sunil/.npm/@remix-run/router/1.17.0/package/package.json not in flight; writing
-129 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
-130 verbose afterAdd /home/sunil/.npm/@remix-run/router/1.17.0/package/package.json written
-131 silly fetchNamedPackageData strip-ansi
-132 silly mapToRegistry name strip-ansi
-133 silly mapToRegistry using default registry
-134 silly mapToRegistry registry https://registry.npmjs.org/
-135 silly mapToRegistry data Result {
-135 silly mapToRegistry   raw: 'strip-ansi',
-135 silly mapToRegistry   scope: null,
-135 silly mapToRegistry   escapedName: 'strip-ansi',
-135 silly mapToRegistry   name: 'strip-ansi',
-135 silly mapToRegistry   rawSpec: '',
-135 silly mapToRegistry   spec: 'latest',
-135 silly mapToRegistry   type: 'tag' }
-136 silly mapToRegistry uri https://registry.npmjs.org/strip-ansi
-137 silly fetchNamedPackageData wrap-ansi
-138 silly mapToRegistry name wrap-ansi
-139 silly mapToRegistry using default registry
-140 silly mapToRegistry registry https://registry.npmjs.org/
-141 silly mapToRegistry data Result {
-141 silly mapToRegistry   raw: 'wrap-ansi',
-141 silly mapToRegistry   scope: null,
-141 silly mapToRegistry   escapedName: 'wrap-ansi',
-141 silly mapToRegistry   name: 'wrap-ansi',
-141 silly mapToRegistry   rawSpec: '',
-141 silly mapToRegistry   spec: 'latest',
-141 silly mapToRegistry   type: 'tag' }
-142 silly mapToRegistry uri https://registry.npmjs.org/wrap-ansi
-143 verbose request uri https://registry.npmjs.org/wrap-ansi
-144 verbose request no auth needed
-145 info attempt registry request try #1 at 11:52:50 AM
-146 verbose etag W/"096b0befe71ac4a3b08a6a2255515b73"
-147 verbose lastModified Sat, 28 Oct 2023 17:40:35 GMT
-148 http request GET https://registry.npmjs.org/wrap-ansi
-149 verbose request uri https://registry.npmjs.org/strip-ansi
-150 verbose request no auth needed
-151 info attempt registry request try #1 at 11:52:50 AM
-152 verbose etag W/"ac0377b2d4e7fbe4eea84e483222d0a5"
-153 verbose lastModified Sun, 28 May 2023 09:55:05 GMT
-154 http request GET https://registry.npmjs.org/strip-ansi
-155 http 304 https://registry.npmjs.org/wrap-ansi
-156 verbose headers { date: 'Wed, 03 Jul 2024 06:22:50 GMT',
-156 verbose headers   connection: 'keep-alive',
-156 verbose headers   'cf-ray': '89d4c88e8cc754f2-DEL',
-156 verbose headers   'cf-cache-status': 'HIT',
-156 verbose headers   'access-control-allow-origin': '*',
-156 verbose headers   age: '211',
-156 verbose headers   'cache-control': 'public, max-age=300',
-156 verbose headers   etag: '"096b0befe71ac4a3b08a6a2255515b73"',
-156 verbose headers   'last-modified': 'Sat, 28 Oct 2023 17:40:35 GMT',
-156 verbose headers   vary: 'Accept-Encoding',
-156 verbose headers   server: 'cloudflare' }
-157 silly get cb [ 304,
-157 silly get   { date: 'Wed, 03 Jul 2024 06:22:50 GMT',
-157 silly get     connection: 'keep-alive',
-157 silly get     'cf-ray': '89d4c88e8cc754f2-DEL',
-157 silly get     'cf-cache-status': 'HIT',
-157 silly get     'access-control-allow-origin': '*',
-157 silly get     age: '211',
-157 silly get     'cache-control': 'public, max-age=300',
-157 silly get     etag: '"096b0befe71ac4a3b08a6a2255515b73"',
-157 silly get     'last-modified': 'Sat, 28 Oct 2023 17:40:35 GMT',
-157 silly get     vary: 'Accept-Encoding',
-157 silly get     server: 'cloudflare' } ]
-158 verbose etag https://registry.npmjs.org/wrap-ansi from cache
-159 verbose get saving wrap-ansi to /home/sunil/.npm/registry.npmjs.org/wrap-ansi/.cache.json
-160 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
-161 http 304 https://registry.npmjs.org/strip-ansi
-162 verbose headers { date: 'Wed, 03 Jul 2024 06:22:50 GMT',
-162 verbose headers   connection: 'keep-alive',
-162 verbose headers   'cf-ray': '89d4c88e8e8559e4-DEL',
-162 verbose headers   'cf-cache-status': 'HIT',
-162 verbose headers   'access-control-allow-origin': '*',
-162 verbose headers   age: '3',
-162 verbose headers   'cache-control': 'public, max-age=300',
-162 verbose headers   etag: '"ac0377b2d4e7fbe4eea84e483222d0a5"',
-162 verbose headers   'last-modified': 'Sun, 28 May 2023 09:55:05 GMT',
-162 verbose headers   vary: 'Accept-Encoding',
-162 verbose headers   server: 'cloudflare' }
-163 silly get cb [ 304,
-163 silly get   { date: 'Wed, 03 Jul 2024 06:22:50 GMT',
-163 silly get     connection: 'keep-alive',
-163 silly get     'cf-ray': '89d4c88e8e8559e4-DEL',
-163 silly get     'cf-cache-status': 'HIT',
-163 silly get     'access-control-allow-origin': '*',
-163 silly get     age: '3',
-163 silly get     'cache-control': 'public, max-age=300',
-163 silly get     etag: '"ac0377b2d4e7fbe4eea84e483222d0a5"',
-163 silly get     'last-modified': 'Sun, 28 May 2023 09:55:05 GMT',
-163 silly get     vary: 'Accept-Encoding',
-163 silly get     server: 'cloudflare' } ]
-164 verbose etag https://registry.npmjs.org/strip-ansi from cache
-165 verbose get saving strip-ansi to /home/sunil/.npm/registry.npmjs.org/strip-ansi/.cache.json
-166 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
-167 silly resolveWithNewModule wrap-ansi@8.1.0 checking installable status
-168 silly cache add args [ 'wrap-ansi@^8.1.0', null ]
-169 verbose cache add spec wrap-ansi@^8.1.0
-170 silly cache add parsed spec Result {
-170 silly cache add   raw: 'wrap-ansi@^8.1.0',
-170 silly cache add   scope: null,
-170 silly cache add   escapedName: 'wrap-ansi',
-170 silly cache add   name: 'wrap-ansi',
-170 silly cache add   rawSpec: '^8.1.0',
-170 silly cache add   spec: '>=8.1.0 <9.0.0',
-170 silly cache add   type: 'range' }
-171 silly addNamed wrap-ansi@>=8.1.0 <9.0.0
-172 verbose addNamed ">=8.1.0 <9.0.0" is a valid semver range for wrap-ansi
-173 silly addNameRange { name: 'wrap-ansi', range: '>=8.1.0 <9.0.0', hasData: false }
-174 silly mapToRegistry name wrap-ansi
-175 silly mapToRegistry using default registry
-176 silly mapToRegistry registry https://registry.npmjs.org/
-177 silly mapToRegistry data Result {
-177 silly mapToRegistry   raw: 'wrap-ansi',
-177 silly mapToRegistry   scope: null,
-177 silly mapToRegistry   escapedName: 'wrap-ansi',
-177 silly mapToRegistry   name: 'wrap-ansi',
-177 silly mapToRegistry   rawSpec: '',
-177 silly mapToRegistry   spec: 'latest',
-177 silly mapToRegistry   type: 'tag' }
-178 silly mapToRegistry uri https://registry.npmjs.org/wrap-ansi
-179 verbose addNameRange registry:https://registry.npmjs.org/wrap-ansi not in flight; fetching
-180 silly resolveWithNewModule strip-ansi@7.1.0 checking installable status
-181 silly cache add args [ 'strip-ansi@^7.0.1', null ]
-182 verbose cache add spec strip-ansi@^7.0.1
-183 silly cache add parsed spec Result {
-183 silly cache add   raw: 'strip-ansi@^7.0.1',
-183 silly cache add   scope: null,
-183 silly cache add   escapedName: 'strip-ansi',
-183 silly cache add   name: 'strip-ansi',
-183 silly cache add   rawSpec: '^7.0.1',
-183 silly cache add   spec: '>=7.0.1 <8.0.0',
-183 silly cache add   type: 'range' }
-184 silly addNamed strip-ansi@>=7.0.1 <8.0.0
-185 verbose addNamed ">=7.0.1 <8.0.0" is a valid semver range for strip-ansi
-186 silly addNameRange { name: 'strip-ansi', range: '>=7.0.1 <8.0.0', hasData: false }
-187 silly mapToRegistry name strip-ansi
-188 silly mapToRegistry using default registry
-189 silly mapToRegistry registry https://registry.npmjs.org/
-190 silly mapToRegistry data Result {
-190 silly mapToRegistry   raw: 'strip-ansi',
-190 silly mapToRegistry   scope: null,
-190 silly mapToRegistry   escapedName: 'strip-ansi',
-190 silly mapToRegistry   name: 'strip-ansi',
-190 silly mapToRegistry   rawSpec: '',
-190 silly mapToRegistry   spec: 'latest',
-190 silly mapToRegistry   type: 'tag' }
-191 silly mapToRegistry uri https://registry.npmjs.org/strip-ansi
-192 verbose addNameRange registry:https://registry.npmjs.org/strip-ansi not in flight; fetching
-193 verbose get https://registry.npmjs.org/wrap-ansi not expired, no request
-194 silly addNameRange number 2 { name: 'wrap-ansi', range: '>=8.1.0 <9.0.0', hasData: true }
-195 silly addNameRange versions [ 'wrap-ansi',
-195 silly addNameRange   [ '0.1.0',
-195 silly addNameRange     '0.2.0',
-195 silly addNameRange     '0.3.0',
-195 silly addNameRange     '1.0.0',
-195 silly addNameRange     '2.0.0',
-195 silly addNameRange     '2.1.0-candidate',
-195 silly addNameRange     '2.1.0',
-195 silly addNameRange     '3.0.0',
-195 silly addNameRange     '3.0.1',
-195 silly addNameRange     '4.0.0',
-195 silly addNameRange     '5.0.0',
-195 silly addNameRange     '5.1.0',
-195 silly addNameRange     '6.0.0',
-195 silly addNameRange     '6.1.0',
-195 silly addNameRange     '6.2.0',
-195 silly addNameRange     '7.0.0',
-195 silly addNameRange     '8.0.0',
-195 silly addNameRange     '8.0.1',
-195 silly addNameRange     '8.1.0',
-195 silly addNameRange     '9.0.0' ] ]
-196 silly addNamed wrap-ansi@8.1.0
-197 verbose addNamed "8.1.0" is a plain semver version for wrap-ansi
-198 verbose get https://registry.npmjs.org/strip-ansi not expired, no request
-199 silly addNameRange number 2 { name: 'strip-ansi', range: '>=7.0.1 <8.0.0', hasData: true }
-200 silly addNameRange versions [ 'strip-ansi',
-200 silly addNameRange   [ '0.1.0',
-200 silly addNameRange     '0.1.1',
-200 silly addNameRange     '0.2.0',
-200 silly addNameRange     '0.2.1',
-200 silly addNameRange     '0.2.2',
-200 silly addNameRange     '0.3.0',
-200 silly addNameRange     '1.0.0',
-200 silly addNameRange     '2.0.0',
-200 silly addNameRange     '2.0.1',
-200 silly addNameRange     '3.0.0',
-200 silly addNameRange     '3.0.1',
-200 silly addNameRange     '4.0.0',
-200 silly addNameRange     '5.0.0',
-200 silly addNameRange     '5.1.0',
-200 silly addNameRange     '5.2.0',
-200 silly addNameRange     '6.0.0',
-200 silly addNameRange     '7.0.0',
-200 silly addNameRange     '7.0.1',
-200 silly addNameRange     '6.0.1',
-200 silly addNameRange     '7.1.0' ] ]
-201 silly addNamed strip-ansi@7.1.0
-202 verbose addNamed "7.1.0" is a plain semver version for strip-ansi
-203 silly cache afterAdd wrap-ansi@8.1.0
-204 verbose afterAdd /home/sunil/.npm/wrap-ansi/8.1.0/package/package.json not in flight; writing
-205 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
-206 silly cache afterAdd strip-ansi@7.1.0
-207 verbose afterAdd /home/sunil/.npm/strip-ansi/7.1.0/package/package.json not in flight; writing
-208 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
-209 verbose afterAdd /home/sunil/.npm/wrap-ansi/8.1.0/package/package.json written
-210 verbose afterAdd /home/sunil/.npm/strip-ansi/7.1.0/package/package.json written
-211 silly rollbackFailedOptional Starting
-212 silly rollbackFailedOptional Finishing
-213 silly runTopLevelLifecycles Finishing
-214 silly install printInstalled
-215 verbose stack Error: Unsupported URL Type: npm:string-width@^4.2.0
-215 verbose stack     at parseUrl (/home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/node_modules/npm-package-arg/npa.js:186:13)
-215 verbose stack     at npa (/home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/node_modules/npm-package-arg/npa.js:79:12)
-215 verbose stack     at module.exports (/home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/node_modules/realize-package-specifier/index.js:12:15)
-215 verbose stack     at childDependencySpecifier (/home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/lib/install/deps.js:104:3)
-215 verbose stack     at addDependency (/home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/lib/install/deps.js:442:3)
-215 verbose stack     at /home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/lib/install/deps.js:401:5
-215 verbose stack     at /home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:35
-215 verbose stack     at Array.forEach (native)
-215 verbose stack     at /home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:11
-215 verbose stack     at Array.forEach (native)
-216 verbose cwd /home/sunil/Desktop/React/OnlineEducationApplication/online-education-app
-217 error Linux 6.5.0-41-generic
-218 error argv "/home/sunil/.nvm/versions/node/v6.9.5/bin/node" "/home/sunil/.nvm/versions/node/v6.9.5/bin/npm" "i" "react-router-dom"
-219 error node v6.9.5
-220 error npm  v3.10.10
-221 error Unsupported URL Type: npm:string-width@^4.2.0
-222 error If you need help, you may report this error at:
-222 error     <https://github.com/npm/npm/issues>
-223 verbose exit [ 1, true ]
+106 silly resolveWithNewModule strip-ansi@7.1.0 checking installable status
+107 silly cache add args [ 'strip-ansi@^7.0.1', null ]
+108 verbose cache add spec strip-ansi@^7.0.1
+109 silly cache add parsed spec Result {
+109 silly cache add   raw: 'strip-ansi@^7.0.1',
+109 silly cache add   scope: null,
+109 silly cache add   escapedName: 'strip-ansi',
+109 silly cache add   name: 'strip-ansi',
+109 silly cache add   rawSpec: '^7.0.1',
+109 silly cache add   spec: '>=7.0.1 <8.0.0',
+109 silly cache add   type: 'range' }
+110 silly addNamed strip-ansi@>=7.0.1 <8.0.0
+111 verbose addNamed ">=7.0.1 <8.0.0" is a valid semver range for strip-ansi
+112 silly addNameRange { name: 'strip-ansi', range: '>=7.0.1 <8.0.0', hasData: false }
+113 silly mapToRegistry name strip-ansi
+114 silly mapToRegistry using default registry
+115 silly mapToRegistry registry https://registry.npmjs.org/
+116 silly mapToRegistry data Result {
+116 silly mapToRegistry   raw: 'strip-ansi',
+116 silly mapToRegistry   scope: null,
+116 silly mapToRegistry   escapedName: 'strip-ansi',
+116 silly mapToRegistry   name: 'strip-ansi',
+116 silly mapToRegistry   rawSpec: '',
+116 silly mapToRegistry   spec: 'latest',
+116 silly mapToRegistry   type: 'tag' }
+117 silly mapToRegistry uri https://registry.npmjs.org/strip-ansi
+118 verbose addNameRange registry:https://registry.npmjs.org/strip-ansi not in flight; fetching
+119 verbose get https://registry.npmjs.org/strip-ansi not expired, no request
+120 silly addNameRange number 2 { name: 'strip-ansi', range: '>=7.0.1 <8.0.0', hasData: true }
+121 silly addNameRange versions [ 'strip-ansi',
+121 silly addNameRange   [ '0.1.0',
+121 silly addNameRange     '0.1.1',
+121 silly addNameRange     '0.2.0',
+121 silly addNameRange     '0.2.1',
+121 silly addNameRange     '0.2.2',
+121 silly addNameRange     '0.3.0',
+121 silly addNameRange     '1.0.0',
+121 silly addNameRange     '2.0.0',
+121 silly addNameRange     '2.0.1',
+121 silly addNameRange     '3.0.0',
+121 silly addNameRange     '3.0.1',
+121 silly addNameRange     '4.0.0',
+121 silly addNameRange     '5.0.0',
+121 silly addNameRange     '5.1.0',
+121 silly addNameRange     '5.2.0',
+121 silly addNameRange     '6.0.0',
+121 silly addNameRange     '7.0.0',
+121 silly addNameRange     '7.0.1',
+121 silly addNameRange     '6.0.1',
+121 silly addNameRange     '7.1.0' ] ]
+122 silly addNamed strip-ansi@7.1.0
+123 verbose addNamed "7.1.0" is a plain semver version for strip-ansi
+124 silly cache afterAdd strip-ansi@7.1.0
+125 verbose afterAdd /home/sunil/.npm/strip-ansi/7.1.0/package/package.json not in flight; writing
+126 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
+127 verbose afterAdd /home/sunil/.npm/strip-ansi/7.1.0/package/package.json written
+128 http 304 https://registry.npmjs.org/wrap-ansi
+129 verbose headers { date: 'Sun, 07 Jul 2024 13:49:20 GMT',
+129 verbose headers   connection: 'keep-alive',
+129 verbose headers   'cf-ray': '89f84c1b7b721b87-DEL',
+129 verbose headers   'cf-cache-status': 'HIT',
+129 verbose headers   'access-control-allow-origin': '*',
+129 verbose headers   age: '280',
+129 verbose headers   'cache-control': 'public, max-age=300',
+129 verbose headers   etag: '"096b0befe71ac4a3b08a6a2255515b73"',
+129 verbose headers   'last-modified': 'Sat, 28 Oct 2023 17:40:35 GMT',
+129 verbose headers   vary: 'Accept-Encoding',
+129 verbose headers   server: 'cloudflare' }
+130 silly get cb [ 304,
+130 silly get   { date: 'Sun, 07 Jul 2024 13:49:20 GMT',
+130 silly get     connection: 'keep-alive',
+130 silly get     'cf-ray': '89f84c1b7b721b87-DEL',
+130 silly get     'cf-cache-status': 'HIT',
+130 silly get     'access-control-allow-origin': '*',
+130 silly get     age: '280',
+130 silly get     'cache-control': 'public, max-age=300',
+130 silly get     etag: '"096b0befe71ac4a3b08a6a2255515b73"',
+130 silly get     'last-modified': 'Sat, 28 Oct 2023 17:40:35 GMT',
+130 silly get     vary: 'Accept-Encoding',
+130 silly get     server: 'cloudflare' } ]
+131 verbose etag https://registry.npmjs.org/wrap-ansi from cache
+132 verbose get saving wrap-ansi to /home/sunil/.npm/registry.npmjs.org/wrap-ansi/.cache.json
+133 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
+134 silly resolveWithNewModule wrap-ansi@8.1.0 checking installable status
+135 silly cache add args [ 'wrap-ansi@^8.1.0', null ]
+136 verbose cache add spec wrap-ansi@^8.1.0
+137 silly cache add parsed spec Result {
+137 silly cache add   raw: 'wrap-ansi@^8.1.0',
+137 silly cache add   scope: null,
+137 silly cache add   escapedName: 'wrap-ansi',
+137 silly cache add   name: 'wrap-ansi',
+137 silly cache add   rawSpec: '^8.1.0',
+137 silly cache add   spec: '>=8.1.0 <9.0.0',
+137 silly cache add   type: 'range' }
+138 silly addNamed wrap-ansi@>=8.1.0 <9.0.0
+139 verbose addNamed ">=8.1.0 <9.0.0" is a valid semver range for wrap-ansi
+140 silly addNameRange { name: 'wrap-ansi', range: '>=8.1.0 <9.0.0', hasData: false }
+141 silly mapToRegistry name wrap-ansi
+142 silly mapToRegistry using default registry
+143 silly mapToRegistry registry https://registry.npmjs.org/
+144 silly mapToRegistry data Result {
+144 silly mapToRegistry   raw: 'wrap-ansi',
+144 silly mapToRegistry   scope: null,
+144 silly mapToRegistry   escapedName: 'wrap-ansi',
+144 silly mapToRegistry   name: 'wrap-ansi',
+144 silly mapToRegistry   rawSpec: '',
+144 silly mapToRegistry   spec: 'latest',
+144 silly mapToRegistry   type: 'tag' }
+145 silly mapToRegistry uri https://registry.npmjs.org/wrap-ansi
+146 verbose addNameRange registry:https://registry.npmjs.org/wrap-ansi not in flight; fetching
+147 verbose get https://registry.npmjs.org/wrap-ansi not expired, no request
+148 silly addNameRange number 2 { name: 'wrap-ansi', range: '>=8.1.0 <9.0.0', hasData: true }
+149 silly addNameRange versions [ 'wrap-ansi',
+149 silly addNameRange   [ '0.1.0',
+149 silly addNameRange     '0.2.0',
+149 silly addNameRange     '0.3.0',
+149 silly addNameRange     '1.0.0',
+149 silly addNameRange     '2.0.0',
+149 silly addNameRange     '2.1.0-candidate',
+149 silly addNameRange     '2.1.0',
+149 silly addNameRange     '3.0.0',
+149 silly addNameRange     '3.0.1',
+149 silly addNameRange     '4.0.0',
+149 silly addNameRange     '5.0.0',
+149 silly addNameRange     '5.1.0',
+149 silly addNameRange     '6.0.0',
+149 silly addNameRange     '6.1.0',
+149 silly addNameRange     '6.2.0',
+149 silly addNameRange     '7.0.0',
+149 silly addNameRange     '8.0.0',
+149 silly addNameRange     '8.0.1',
+149 silly addNameRange     '8.1.0',
+149 silly addNameRange     '9.0.0' ] ]
+150 silly addNamed wrap-ansi@8.1.0
+151 verbose addNamed "8.1.0" is a plain semver version for wrap-ansi
+152 silly cache afterAdd wrap-ansi@8.1.0
+153 verbose afterAdd /home/sunil/.npm/wrap-ansi/8.1.0/package/package.json not in flight; writing
+154 verbose correctMkdir /home/sunil/.npm correctMkdir not in flight; initializing
+155 verbose afterAdd /home/sunil/.npm/wrap-ansi/8.1.0/package/package.json written
+156 silly rollbackFailedOptional Starting
+157 silly rollbackFailedOptional Finishing
+158 silly runTopLevelLifecycles Finishing
+159 silly install printInstalled
+160 verbose stack Error: Unsupported URL Type: npm:string-width@^4.2.0
+160 verbose stack     at parseUrl (/home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/node_modules/npm-package-arg/npa.js:186:13)
+160 verbose stack     at npa (/home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/node_modules/npm-package-arg/npa.js:79:12)
+160 verbose stack     at module.exports (/home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/node_modules/realize-package-specifier/index.js:12:15)
+160 verbose stack     at childDependencySpecifier (/home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/lib/install/deps.js:104:3)
+160 verbose stack     at addDependency (/home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/lib/install/deps.js:442:3)
+160 verbose stack     at /home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/lib/install/deps.js:401:5
+160 verbose stack     at /home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:35
+160 verbose stack     at Array.forEach (native)
+160 verbose stack     at /home/sunil/.nvm/versions/node/v6.9.5/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:11
+160 verbose stack     at Array.forEach (native)
+161 verbose cwd /home/sunil/Desktop/React/OnlineEducationApplication/online-education-app
+162 error Linux 6.5.0-41-generic
+163 error argv "/home/sunil/.nvm/versions/node/v6.9.5/bin/node" "/home/sunil/.nvm/versions/node/v6.9.5/bin/npm" "install" "dotenv"
+164 error node v6.9.5
+165 error npm  v3.10.10
+166 error Unsupported URL Type: npm:string-width@^4.2.0
+167 error If you need help, you may report this error at:
+167 error     <https://github.com/npm/npm/issues>
+168 verbose exit [ 1, true ]
