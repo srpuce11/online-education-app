@@ -36,7 +36,6 @@ const PostLecture = () => {
       setSelectedCourse('');
       setTitle('');
       setFile(null);
-      // Reset file input field
       e.target.reset();
     } catch (error) {
       console.error("Error uploading lecture:", error);

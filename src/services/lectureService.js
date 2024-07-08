@@ -4,7 +4,6 @@ const API_URL = process.env.REACT_APP_API_BASE_URL_COURSE.concat("/courses");
 console.log("API URSL FOR AUTH IS " ,API_URL);
 
 const getFileNameFromUrl = (url) => {
-  // Extract the file name from the URL
   return url.substring(url.lastIndexOf('/') + 1);
 };
 

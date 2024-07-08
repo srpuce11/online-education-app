@@ -8,7 +8,7 @@ const CreateCourseForm = () => {
   const [price, setPrice] = useState('');
   const teacherId = JSON.parse(sessionStorage.getItem('user')).id; 
   const navigate = useNavigate();
-  const { courseId } = useParams(); // Get courseId from URL if present
+  const { courseId } = useParams(); 
 
   useEffect(() => {
     if (courseId) {
