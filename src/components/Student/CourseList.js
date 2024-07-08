@@ -5,18 +5,24 @@ import courseService from '../../services/courseService';
 const CourseList = () => {
   const [groupedCourses, setGroupedCourses] = useState({});
   const studentId = JSON.parse(sessionStorage.getItem('user')).id; 
+
   useEffect(() => {
     const fetchCoursesAndTeachers = async () => {
       try {
         const allCourses = await courseService.getAllCourses();
+
+        const studentCoursesResponse = await axios.get(`http://192.168.29.245:8082/api/courses/student-courses/${studentId}`);
+        const studentCourses = studentCoursesResponse.data.map(course => course.courseId);
+
+        const availableCourses = allCourses.filter(course => !studentCourses.includes(course.id));
+
         const coursesWithTeachers = await Promise.all(
-          allCourses.map(async (course) => {
+          availableCourses.map(async (course) => {
             try {
               const teacherResponse = await axios.get(`http://192.168.29.245:8081/api/users/${course.teacherId}`);
               return { ...course, teacherEmail: teacherResponse.data.email };
             } catch (error) {
               console.error(`Error fetching teacher for course ${course.id}:`, error);
-              // Skip this course if the teacher is not found
               return null;
             }
           })
@@ -39,7 +45,7 @@ const CourseList = () => {
     };
 
     fetchCoursesAndTeachers();
-  }, []);
+  }, [studentId]);
 
   const handleBuyCourse = async (courseId) => {
     try {

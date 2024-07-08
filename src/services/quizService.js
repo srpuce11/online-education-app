@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_BASE_URL_QUIZ;
+const API_URL = process.env.REACT_APP_API_BASE_URL_QUIZ.concat('/quiz');
 
 const quizService = {
   createQuiz: async (quizData) => {
     try {
-      const response = await axios.post(`${API_URL}/quiz/quizzes`, quizData, {
+      const response = await axios.post(`${API_URL}/quizzes`, quizData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -18,7 +18,7 @@ const quizService = {
   },
   getQuizzesByTeacherId: async (teacherId) => {
     try {
-      const response = await axios.get(`${API_URL}/quiz/quizzes/getQuizByTeacherId?teacherId=${teacherId}`);
+      const response = await axios.get(`${API_URL}/quizzes/getQuizByTeacherId?teacherId=${teacherId}`);
       return response.data;
     } catch (error) {
       console.error('Error fetching quizzes by teacher ID:', error);
@@ -27,7 +27,7 @@ const quizService = {
   },
   deleteQuiz: async (quizId) => {
     try {
-      const response = await axios.delete(`${API_URL}/quiz/quizzes/${quizId}`);
+      const response = await axios.delete(`${API_URL}/quizzes/${quizId}`);
       return response.data;
     } catch (error) {
       console.error('Error deleting quiz:', error);
@@ -36,7 +36,7 @@ const quizService = {
   },
   getQuestionsByQuizId: async (quizId) => {
     try {
-      const response = await axios.get(`${API_URL}/quiz/${quizId}/question`);
+      const response = await axios.get(`${API_URL}/${quizId}/question`);
       return response.data;
     } catch (error) {
       console.error('Error fetching questions by quiz ID:', error);
@@ -45,7 +45,7 @@ const quizService = {
   },
   addQuestion: async (quizId, questionData) => {
     try {
-      const response = await axios.post(`${API_URL}/quiz/${quizId}/question`, questionData, {
+      const response = await axios.post(`${API_URL}/${quizId}/question`, questionData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -58,7 +58,7 @@ const quizService = {
   },
   deleteQuestion: async (quizId, questionId) => {
     try {
-      const response = await axios.delete(`${API_URL}/quiz/${quizId}/question/${questionId}`);
+      const response = await axios.delete(`${API_URL}/${quizId}/question/${questionId}`);
       return response.data;
     } catch (error) {
       console.error('Error deleting question:', error);
@@ -67,7 +67,7 @@ const quizService = {
   },
   addOption: async (quizId, questionId, optionData) => {
     try {
-      const response = await axios.post(`${API_URL}/quiz/${quizId}/question/${questionId}/options`, optionData, {
+      const response = await axios.post(`${API_URL}/${quizId}/question/${questionId}/options`, optionData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -80,13 +80,28 @@ const quizService = {
   },
   getOptionsByQuestionId: async (quizId, questionId) => {
     try {
-      const response = await axios.get(`${API_URL}/quiz/${quizId}/question/${questionId}/options`);
+      const response = await axios.get(`${API_URL}/${quizId}/question/${questionId}/options`);
       return response.data;
     } catch (error) {
       console.error('Error fetching options:', error);
       throw error;
     }
-  }
+  },
+    getAllQuizzes: async () => {
+    return axios.get(`${API_URL}/quizzes`);
+  },
+  
+  getPurchasedQuizzes: async (studentId) => {
+    return axios.get(`${API_URL}/student-quiz/${studentId}`);
+  },
+  
+  buyQuiz: async (studentId, quizId) => {
+    return axios.post(`${API_URL}/student-quiz`, { studentId, quizId });
+  },
+
+  getQuizQuestions: async (quizId) => {
+    return axios.get(`${API_URL}/${quizId}/questions`);
+  },
 };
 
 export default quizService;
