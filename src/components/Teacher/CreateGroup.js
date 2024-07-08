@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import courseService from '../../services/courseService';
+import { ToastContainer } from 'react-toastify';
 
 const CreateGroup = () => {
   const [courses, setCourses] = useState([]);
@@ -62,7 +63,7 @@ const CreateGroup = () => {
         ))}
       </ul>
       <button onClick={handleCreateNewCourse}>Create New Course</button>
-
+      <ToastContainer />
     </div>
   );
 };

@@ -8,6 +8,40 @@ const getFileNameFromUrl = (url) => {
 };
 
 const lectureService = {
+
+  uploadChunkLecture: async (courseId, lectureData, file) => {
+    
+    const CHUNK_SIZE = 1024 * 1024 *2;
+    const totalChunks = Math.ceil(file.size / CHUNK_SIZE);
+
+    for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
+      const start = chunkIndex * CHUNK_SIZE;
+      const end = Math.min(file.size, start + CHUNK_SIZE);
+      const chunk = file.slice(start, end);
+
+      const formData = new FormData();
+      formData.append('file', chunk);
+      formData.append('lecture', JSON.stringify(lectureData));
+      formData.append('chunk', chunkIndex);
+      formData.append('chunks', totalChunks);
+      formData.append('fileName', "fileName123");
+
+      try {
+        await axios.post(`${API_URL}/course/${courseId}/lecturesInChunk`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+      } catch (error) {
+        console.error('Error uploading chunk:', error);
+        throw error;
+      }
+    }
+
+    return { message: 'Upload complete' };
+  },
+
+
   uploadLecture: async (courseId, lectureData, file) => {
     const formData = new FormData();
     formData.append('file', file);

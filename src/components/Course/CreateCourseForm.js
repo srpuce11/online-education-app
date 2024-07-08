@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import courseService from '../../services/courseService';
+import { ToastContainer, toast } from 'react-toastify';
 
 const CreateCourseForm = () => {
   const [title, setTitle] = useState('');
@@ -28,10 +29,7 @@ const CreateCourseForm = () => {
   }, [courseId]);
 
   const handleCancel = () => {
-
-
     navigate(-1);
-
   }
 
   const handleSubmit = async (e) => {
@@ -43,13 +41,14 @@ const CreateCourseForm = () => {
       } else {
         await courseService.createCourse(courseData);
       }
+      toast("Course Saved successfully, continue with adding Lectures");
       navigate("/create-group");
     } catch (error) {
-      console.error('Error saving course:', error);
+      toast("Error saving course");
     }
   };
 
-  return (
+  return (<>
     <form onSubmit={handleSubmit}>
       <div>
         <label>Title:</label>
@@ -61,13 +60,16 @@ const CreateCourseForm = () => {
       </div>
       <div>
         <label>Price:</label>
-        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} required />
+        <input type="number" value={price} onChange={(e) => setPrice(Number(e.target.value))} required />
       </div>
+
+
       <button type="submit">{courseId ? 'Update Course' : 'Create Course'}</button>
-
-      <button onClick={handleCancel}>Cancel</button>
-
     </form>
+    <div>
+    <button onClick={handleCancel}>Cancel</button> </div>
+    <ToastContainer />
+    </>
   );
 };
 

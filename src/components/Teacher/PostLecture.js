@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import courseService from "../../services/courseService";
 import lectureService from "../../services/lectureService";
+import { ToastContainer, toast } from "react-toastify";
 
 const PostLecture = () => {
   const [courses, setCourses] = useState([]);
   const [selectedCourse, setSelectedCourse] = useState("");
   const [title, setTitle] = useState("");
+  const [videoUrl, setVideoUrl] = useState("");
   const [file, setFile] = useState(null);
 
   useEffect(() => {
@@ -29,14 +31,17 @@ const PostLecture = () => {
       alert("Please fill all fields and select a file.");
       return;
     }
-
-    const lectureData = { title };
+    const lectureData = { title, videoUrl };
     try {
-      await lectureService.uploadLecture(selectedCourse, lectureData, file);
+      toast.loading("Uploading You Lecture");
+      await lectureService.uploadChunkLecture(selectedCourse, lectureData, file);
+   
+      // await lectureService.uploadLecture(selectedCourse, lectureData, file);
       setSelectedCourse('');
       setTitle('');
       setFile(null);
       e.target.reset();
+      toast.success("Your Lecture Successfully Uplaoded in DB");
     } catch (error) {
       console.error("Error uploading lecture:", error);
     }
@@ -75,13 +80,18 @@ const PostLecture = () => {
           <input
             type="file"
             accept="video/*"
-            onChange={(e) => setFile(e.target.files[0])}
+            onChange={(e) => {setFile(e.target.files[0]);
+              setVideoUrl(e.target.files[0].name);
+            }
+            }
             required
           />
         </div>
         <button type="submit">Upload Lecture</button>
       </form>
+      <ToastContainer />
     </div>
+
   );
 };
 

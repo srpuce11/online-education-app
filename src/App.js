@@ -19,6 +19,7 @@ import Quiz from './components/Student/Quiz';
 import Wallet from './components/Student/Wallet';
 import QuestionManagement from './components/Quiz/QuestionManagement';
 import LearnCourse from './components/Student/LearnCourse';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     const [role, setRole] = useState(null);
@@ -48,6 +49,7 @@ const App = () => {
                             <Route path="/" element={<Home />} />
                             <Route path="/login" element={<Login setRole={setRole}/>}  />
                             <Route path="/register" element={<Register />} />
+                            
                             {role === 'teacher' && (
                                 <>
                                     <Route path="/dashboard" element={<TeacherDashboard />} />
