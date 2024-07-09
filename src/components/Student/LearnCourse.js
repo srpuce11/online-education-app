@@ -10,18 +10,18 @@ const LearnCourse = () => {
     const fetchCoursesAndLectures = async () => {
       try {
         const studentCoursesResponse = await axios.get(
-          `http://192.168.29.245:8082/api/courses/student-courses/${studentId}`
+          `http://localhost:8082/api/courses/student-courses/${studentId}`
         );
         const studentCourses = studentCoursesResponse.data;
 
         const coursesWithDetails = await Promise.all(
           studentCourses.map(async (studentCourse) => {
             const courseDetailsResponse = await axios.get(
-              `http://192.168.29.245:8082/api/courses/${studentCourse.courseId}`
+              `http://localhost:8082/api/courses/${studentCourse.courseId}`
             );
             const courseDetails = courseDetailsResponse.data;
             const lecturesResponse = await axios.get(
-              `http://192.168.29.245:8082/api/courses/course/${studentCourse.courseId}/lectures`
+              `http://localhost:8082/api/courses/course/${studentCourse.courseId}/lectures`
             );
             const lectures = lecturesResponse.data;
 
@@ -38,12 +38,12 @@ const LearnCourse = () => {
     fetchCoursesAndLectures();
   }, [studentId]);
 
-  const handleDownloadVideo = (lectureId,videoUrl) => {
+  const handleDownloadVideo = (lectureId, videoUrl) => {
     const videoName = videoUrl.split("/").pop();
-    const videoLinkTemp = `http://192.168.29.245:8082/api/courses/course/1/lectures/download/${videoName}`;
+    const videoLinkTemp = `http://localhost:8082/api/courses/course/1/lectures/download/${videoName}`;
     setVideoLinks((prevLinks) => ({ ...prevLinks, [lectureId]: videoLinkTemp }));
 
-    window.location.href = `http://192.168.29.245:8082/api/courses/course/1/lectures/download/${videoName}`;
+    window.location.href = `http://localhost:8082/api/courses/course/1/lectures/download/${videoName}`;
   };
 
   return (
@@ -58,13 +58,13 @@ const LearnCourse = () => {
             {course.lectures.map((lecture) => (
               <li key={lecture.id}>
                 <p>Title: {lecture.title}</p>
-                <video width="3000" height="200" controls>
-                  <source src={videoLinks[lecture.id]} type="video/webm" />
+                <video width="300" height="200" controls>
+                  <source src={lecture.videoUrl} type="video/webm" />
                 </video>
-                <button onClick={() => handleDownloadVideo(lecture.id,lecture.videoUrl)}>
+                <button onClick={() => handleDownloadVideo(lecture.id, lecture.videoUrl)}>
                   Download/Stream Video
                 </button>
-              </li>
+                </li>
             ))}
           </ul>
         </div>

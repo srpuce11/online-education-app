@@ -100,7 +100,31 @@ const quizService = {
   },
 
   getQuizQuestions: async (quizId) => {
-    return axios.get(`${API_URL}/${quizId}/questions`);
+    return axios.get(`${API_URL}/${quizId}/question`);
+  },
+  submitQuizAttempt: async (quizId, studentId, answers) => {
+    try {
+      const response = await axios.post(`${API_URL}/quiz/${quizId}/quiz_attempts`, {
+        studentId,
+        answers,
+      });
+      return response.data;
+    } catch (error) {
+      console.error('Error submitting quiz attempt:', error);
+      throw error;
+    }
+  },
+  submitQuizAttempt: async (quizId, studentId, answers) => {
+    try {
+      const response = await axios.post(`${API_URL}/${quizId}/quiz_attempts`, {
+        studentId,
+        answers,
+      });
+      return response.data;
+    } catch (error) {
+      console.error('Error submitting quiz attempt:', error);
+      throw error;
+    }
   },
 };
 

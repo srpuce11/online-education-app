@@ -79,7 +79,16 @@ const questionService = {
       body: JSON.stringify(optionData)
     });
     return response.json();
-  }
+  },
+  getOptionsByQuestionId: async (quizId, questionId) => {
+    try {
+      const response = await axios.get(`${API_URL}/quiz/${quizId}/question/${questionId}/options`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching options:', error);
+      throw error;
+    }
+  },
 };
 
 

@@ -20,7 +20,7 @@ import Wallet from './components/Student/Wallet';
 import QuestionManagement from './components/Quiz/QuestionManagement';
 import LearnCourse from './components/Student/LearnCourse';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
 const App = () => {
     const [role, setRole] = useState(null);
 
@@ -40,6 +40,17 @@ const App = () => {
 
     return (
         <Router>
+        <ToastContainer
+        position="top-right"
+        autoClose={100}
+        hideProgressBar={true}
+        newestOnTop={true}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
             <div className="app">
                 <Header onLogout={handleLogout} />
                 <div className="main-content">

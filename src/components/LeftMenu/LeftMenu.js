@@ -12,7 +12,7 @@ const LeftMenu = ({ role }) => {
                             <li><Link to="/create-group">Courses</Link></li>
                             <li><Link to="/post-lecture">Post Lecture</Link></li>
                             <li><Link to="/create-quiz">Create Quiz</Link></li>
-                            <li><Link to="/chat-group">Chat Group</Link></li>
+                            
                         </>
                     )}
                     {role === 'student' && (

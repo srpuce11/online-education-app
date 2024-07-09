@@ -33,9 +33,7 @@ const PostLecture = () => {
     }
     const lectureData = { title, videoUrl };
     try {
-      toast.loading("Uploading You Lecture");
       await lectureService.uploadChunkLecture(selectedCourse, lectureData, file);
-   
       // await lectureService.uploadLecture(selectedCourse, lectureData, file);
       setSelectedCourse('');
       setTitle('');

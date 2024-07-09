@@ -10,6 +10,7 @@ const CourseDetails = () => {
   const [selectedLectureUrl, setSelectedLectureUrl] = useState(null);
   const navigate = useNavigate();
   const API_URL = process.env.REACT_APP_API_BASE_URL_COURSE;
+
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
@@ -31,7 +32,7 @@ const CourseDetails = () => {
 
     fetchCourseDetails();
     fetchLectures();
-  }, [courseId,selectedLectureUrl]);
+  }, [courseId]);
 
   const handleDeleteCourse = async () => {
     if (window.confirm('Are you sure you want to delete this course?')) {
@@ -80,37 +81,11 @@ const CourseDetails = () => {
       {selectedLectureUrl && (
         <div>
           <h3>Viewing Lecture</h3>
-          <iframe
-          width="640"
-          height="480"
-          src={selectedLectureUrl}
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-          <video
-          id="my-video"
-          class="video-js"e
-          controls
-          preload="auto"
-          width="640"
-          height="264"
-          poster=""
-          data-setup="{selectedLectureUrl}"
-        >
-          <source src="MY_VIDEO.mp4" type="video/mp4" />
-          <source src={selectedLectureUrl} type="video/webm" />
-          <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a
-            web browser that
-          </p>
-        </video>
-          <script src="https://vjs.zencdn.net/8.12.0/video.min.js"></script>
+          <video width="640" height="480" controls>
+            <source src={selectedLectureUrl} type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
         </div>
-        
-
-
-
       )}
       <ul>
         {lectures.map((lecture) => (
@@ -121,8 +96,6 @@ const CourseDetails = () => {
           </li>
         ))}
       </ul>
-
-     
     </div>
   );
 };

@@ -113,11 +113,16 @@ function QuestionManagement() {
         />
         <button onClick={handleAddQuestion}>Add Question</button>
       </div>
+      <p> Please add new options and tick on correct Answer</p>
       <ul>
       {questions.map(question => (
+        
         <li key={question.id}>
+        
           <p>{question.questionText}</p>
+          
           <button onClick={() => handleDeleteQuestion(question.id)}>Delete Question</button>
+         
           {selectedQuestionId === question.id ? (
             <div>
               <input 
@@ -126,6 +131,7 @@ function QuestionManagement() {
                 onChange={(e) => setNewOptionText(e.target.value)} 
                 placeholder="New Option" 
               />
+              
               <button onClick={() => handleAddOption(question.id)}>Add Option</button>
             </div>
           ) : (
