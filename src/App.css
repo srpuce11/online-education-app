@@ -35,4 +35,28 @@
   to {
     transform: rotate(360deg);
   }
+
+  
+}
+
+
+
+
+/* Ensure the main content area is scrollable */
+.main-content {
+  display: flex;
+  height: calc(100vh - 60px); /* Adjust based on your header/footer height */
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 20px;
+}
+
+/* Ensure the course list area is scrollable if needed */
+.course-list {
+  max-height: calc(100vh - 120px); /* Adjust based on other components height */
+  overflow-y: auto;
 }
